@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1512400447529.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3137034988",
+    "id" : "D0394F90",
+    "lastKnownWriteTime" : 1512404087,
+    "last_content_update" : 1512404087259,
+    "path" : "C:/PythonFactory/DataChallenge/DataChallengeR/DataChallenge/Day1Challenge.R",
+    "project_path" : "Day1Challenge.R",
+    "properties" : {
+        "cursorPosition" : "44,0",
+        "scrollLine" : "20",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
