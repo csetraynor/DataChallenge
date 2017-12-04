@@ -1,7 +1,7 @@
 # Day 1
 
 library(tidyverse)
-library(dplyr)
+
 
 # read in all three datasets (you'll pick one to use later)
 recpies <- read_csv("epi_r.csv")
@@ -29,24 +29,28 @@ ggplot(recpies, aes(x = calories, y = dessert)) + # draw a
               method.args = list(family = "binomial")) # ...from the binomial family
 
 #we choose weather
+#we would like to see if temperature and windspeed are correlated, using linear regression
 weather <- read_csv("weatherHistory.csv")
 
 # clean our dataset
 weather <- weather %>%
-  na.omit() # remove rows with NA values
+  filter(Humidity > 0) 
+  na.omit() 
+# remove rows with NA values
 #Factor data
 
-weather$Summary <- as.factor(weather$Summary)
-weather$ID <- 1:nrow(weather)
-
-weather %>% 
-  group_by(Summary) %>%
-  mutate(no_rows = length(Summary))
-# check category temperature
+# check category temperature (predictor)
 print("Is temperature a numeric variable?")
 is.numeric(weather$`Temperature (C)`)
 
+#check category humidity (response)
+print("Is wind speed a numeric variable?")
+is.numeric(weather$Humidity)
 
 # plot & add a regression line
-ggplot(weather, aes(x = `Temperature (C)`, y = `Daily Summary` )) + # draw a 
-  geom_point() # ...from the multinomial family
+ggplot(weather, aes(x = `Temperature (C)`, y = Humidity)) + # draw a 
+  geom_point() +
+geom_smooth(method = "glm", # plot a regression...
+            method.args = list(family = "gaussian")) # ...from the binomial family
+
+# plot & add a regression line
