@@ -2,7 +2,7 @@
 library(tidyverse)
 library(boot)
 
-survey <- read_csv("/home/carlos/R-Factory/survey_results_public.csv")
+survey <- read_csv(".../survey_results_public.csv")
 
 head(survey)
 unique(survey$HoursPerWeek)
